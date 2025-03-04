@@ -19,7 +19,7 @@ const RestaurantListPage = () => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/restaurants"); // API Call
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/restaurants`); // API Call
         const data = await response.json();
         setRestaurants(data); // Store data in state
         setFilteredRestaurants(data);
